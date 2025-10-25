@@ -45,14 +45,31 @@ A comprehensive, full-stack options pricing web application featuring Black-Scho
 
 ## Demo
 
-> **Note:** Add screenshots or GIF demonstrations here once deployed
+### Screenshots
 
-### Live Features:
-- Real-time option pricing calculations
-- Interactive parameter inputs with validation
-- Responsive design for desktop and mobile
-- Beautiful data visualizations with Matplotlib
-- REST API for integration with other applications
+#### Options Calculator
+Price options using Black-Scholes, Binomial Tree, or Monte Carlo models with real-time calculations and Greeks.
+
+![Options Calculator](assets/Calculator.png)
+
+#### Model Comparison
+Compare pricing results across all three models side-by-side to understand model differences and convergence.
+
+![Model Comparison](assets/Comparison.png)
+
+#### Interactive Visualizations
+Generate beautiful charts showing option prices, Greeks, Monte Carlo paths, and sensitivity analysis.
+
+![Visualizations](assets/Visualisation.png)
+
+### Key Features:
+- **Real-time Calculations** - Instant option pricing and Greeks computation
+- **Interactive Parameter Inputs** - Intuitive UI with validation and helpful defaults
+- **Responsive Design** - Works seamlessly on desktop and mobile devices
+- **Beautiful Visualizations** - Professional charts powered by Matplotlib
+- **REST API** - Full-featured API for integration with other applications
+- **Multiple Models** - Black-Scholes, Binomial Tree, and Monte Carlo methods
+- **Comprehensive Analytics** - Implied volatility, sensitivity analysis, and payoff diagrams
 
 ## Quick Start
 

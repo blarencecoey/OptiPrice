@@ -1,6 +1,13 @@
 """Options Analysis Utilities"""
 import numpy as np
 
+try:
+    # Try relative import (when used as a package)
+    from ..models import BlackScholesModel, BinomialTreeModel, MonteCarloModel
+except (ImportError, ValueError):
+    # Fall back to direct import (when backend is in sys.path)
+    from models import BlackScholesModel, BinomialTreeModel, MonteCarloModel
+
 
 class OptionsAnalyzer:
     """Utility class for analyzing options pricing results."""
@@ -21,8 +28,6 @@ class OptionsAnalyzer:
         Returns:
             dict: Comparison results from all models
         """
-        from ..models import BlackScholesModel, BinomialTreeModel, MonteCarloModel
-
         results = {}
 
         # Black-Scholes
@@ -69,8 +74,6 @@ class OptionsAnalyzer:
         Returns:
             float: Implied volatility (or None if not converged)
         """
-        from ..models import BlackScholesModel
-
         # Initial guess for volatility
         sigma = 0.3
 
@@ -146,8 +149,6 @@ class OptionsAnalyzer:
         Returns:
             dict: Parameter values and corresponding option prices
         """
-        from ..models import BlackScholesModel
-
         base_values = {'S': S, 'K': K, 'T': T, 'r': r, 'sigma': sigma}
         param_map = {'spot': 'S', 'volatility': 'sigma', 'time': 'T', 'rate': 'r'}
 

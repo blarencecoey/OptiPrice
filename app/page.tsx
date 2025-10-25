@@ -67,6 +67,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="text-center mt-12 text-gray-600 dark:text-gray-400 text-sm">
           <p>Built with Python (Flask), Next.js, and Tailwind CSS</p>
+          <p className="mt-2">© {new Date().getFullYear()} Clarence Boey. All rights reserved.</p>
         </footer>
       </div>
     </main>

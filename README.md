@@ -1,10 +1,26 @@
-# Options Pricing Models Web Application
+# OptiPrice - Options Pricing Models Web Application
 
-A comprehensive options pricing web application featuring Black-Scholes, Binomial Tree, and Monte Carlo methods with advanced data visualization and analysis tools. Built with Python (Flask) backend and Next.js frontend.
+A comprehensive, full-stack options pricing web application featuring Black-Scholes, Binomial Tree, and Monte Carlo methods with advanced data visualization and analysis tools. Built with Python (Flask) backend and Next.js frontend.
 
-![Options Pricing Dashboard](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Next.js](https://img.shields.io/badge/Next.js-14.0-black.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.0-black.svg)](https://nextjs.org/)
+[![Flask](https://img.shields.io/badge/Flask-2.3-lightgrey.svg)](https://flask.palletsprojects.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+## Table of Contents
+
+- [Features](#features)
+- [Demo](#demo)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-endpoints)
+- [Technical Details](#technical-details)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
 
@@ -27,16 +43,57 @@ A comprehensive options pricing web application featuring Black-Scholes, Binomia
 - Volatility surfaces
 - Real-time chart generation
 
+## Demo
+
+> **Note:** Add screenshots or GIF demonstrations here once deployed
+
+### Live Features:
+- Real-time option pricing calculations
+- Interactive parameter inputs with validation
+- Responsive design for desktop and mobile
+- Beautiful data visualizations with Matplotlib
+- REST API for integration with other applications
+
+## Quick Start
+
+Get up and running in 5 minutes! See [QUICKSTART.md](QUICKSTART.md) for detailed instructions.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/blarencecoey/OptiPrice.git
+cd OptiPrice
+
+# 2. Backend setup
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r backend/requirements.txt
+
+# 3. Frontend setup (in a new terminal)
+npm install
+
+# 4. Run the application
+# Terminal 1 - Backend
+cd backend/api && python3 app.py
+
+# Terminal 2 - Frontend
+npm run dev
+
+# 5. Open http://localhost:3000 in your browser
+```
+
 ## Project Structure
 
 ```
-Options Pricing Project/
+OptiPrice/
 ├── backend/                    # Python Flask backend
+│   ├── __init__.py            # Package initialization
 │   ├── models/                # Pricing models
+│   │   ├── __init__.py       # Models package
 │   │   ├── black_scholes.py  # Black-Scholes implementation
 │   │   ├── binomial_tree.py  # Binomial Tree implementation
 │   │   └── monte_carlo.py    # Monte Carlo implementation
 │   ├── utils/                 # Utilities
+│   │   ├── __init__.py       # Utils package
 │   │   ├── visualizer.py     # Chart generation
 │   │   └── analyzer.py       # Analysis tools
 │   ├── api/                   # API endpoints
@@ -52,72 +109,112 @@ Options Pricing Project/
 │   └── VisualizationPanel.tsx # Visualization interface
 ├── lib/                       # Utilities
 │   └── api.ts                # API client
+├── venv/                      # Python virtual environment (local only)
 ├── package.json              # Node.js dependencies
 ├── next.config.js            # Next.js configuration
 ├── tsconfig.json             # TypeScript configuration
-└── tailwind.config.js        # Tailwind CSS configuration
+├── tailwind.config.js        # Tailwind CSS configuration
+├── README.md                 # Project documentation
+├── QUICKSTART.md             # Quick start guide
+└── START.md                  # Startup instructions
 ```
 
-## Getting Started
+## Installation
 
 ### Prerequisites
 
-- Python 3.8 or higher
-- Node.js 18.0 or higher
-- npm or yarn package manager
+- **Python 3.8+** - [Download Python](https://www.python.org/downloads/)
+- **Node.js 18.0+** - [Download Node.js](https://nodejs.org/)
+- **npm or yarn** - Package manager (comes with Node.js)
+- **Git** - [Download Git](https://git-scm.com/downloads)
 
-### Backend Setup
+### Step 1: Clone the Repository
 
-1. Navigate to the project directory:
 ```bash
-cd "Options Pricing Project"
+git clone https://github.com/blarencecoey/OptiPrice.git
+cd OptiPrice
 ```
 
-2. Create a Python virtual environment:
+### Step 2: Backend Setup
+
 ```bash
+# Create a Python virtual environment
 python3 -m venv venv
 
-# On Windows
+# Activate the virtual environment
+# On Windows:
 venv\Scripts\activate
-
-# On Linux/Mac
+# On Linux/Mac:
 source venv/bin/activate
-```
 
-3. Install Python dependencies:
-```bash
+# Install Python dependencies
 cd backend
 pip install -r requirements.txt
+cd ..
 ```
 
-4. Start the Flask backend server:
+**Verify backend installation:**
 ```bash
-cd api
-python3 app.py
+python3 -c "import sys; sys.path.insert(0, 'backend'); from models import BlackScholesModel; print('✓ Backend installation successful!')"
 ```
 
-The backend API will run on `http://localhost:5000`
+### Step 3: Frontend Setup
 
-### Frontend Setup
+Open a **new terminal** window:
 
-1. Open a new terminal and navigate to the project directory:
 ```bash
-cd "Options Pricing Project"
-```
+cd OptiPrice
 
-2. Install Node.js dependencies:
-```bash
+# Install Node.js dependencies
 npm install
 ```
 
-3. Start the Next.js development server:
+**Verify frontend installation:**
 ```bash
+npm run build
+```
+
+### Step 4: Run the Application
+
+**Terminal 1 - Start Backend Server:**
+```bash
+# Make sure virtual environment is activated
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Navigate to API directory
+cd backend/api
+
+# Start Flask server
+python3 app.py
+```
+
+You should see:
+```
+ * Running on http://127.0.0.1:5000
+ * Running on http://0.0.0.0:5000
+```
+
+**Terminal 2 - Start Frontend Server:**
+```bash
+# From project root
 npm run dev
 ```
 
-The frontend will run on `http://localhost:3000`
+You should see:
+```
+▲ Next.js 14.0.0
+- Local:        http://localhost:3000
+- ready started server on 0.0.0.0:3000
+```
 
-4. Open your browser and navigate to `http://localhost:3000`
+### Step 5: Access the Application
+
+Open your browser and navigate to:
+```
+http://localhost:3000
+```
+
+You should see the OptiPrice dashboard!
 
 ## Usage
 
@@ -224,6 +321,124 @@ Where W(t) is a Wiener process. Provides confidence intervals based on simulatio
 - **Tailwind CSS**: Styling
 - **Axios**: HTTP client
 
+## Troubleshooting
+
+### Common Issues and Solutions
+
+#### 1. "attempted relative import beyond top-level package" Error
+
+**Problem:** This error occurs when trying to import models in the analyzer or visualizer.
+
+**Solution:** The project includes `__init__.py` files in the backend directory structure. Ensure these files exist:
+- `backend/__init__.py`
+- `backend/models/__init__.py`
+- `backend/utils/__init__.py`
+
+The imports in `backend/utils/analyzer.py` use a try-except pattern to handle both relative and absolute imports:
+```python
+try:
+    from ..models import BlackScholesModel, BinomialTreeModel, MonteCarloModel
+except (ImportError, ValueError):
+    from models import BlackScholesModel, BinomialTreeModel, MonteCarloModel
+```
+
+#### 2. "Module not found" Error
+
+**Problem:** Python can't find the required modules.
+
+**Solution:**
+```bash
+# Ensure virtual environment is activated
+source venv/bin/activate  # Linux/Mac
+# OR
+venv\Scripts\activate     # Windows
+
+# Reinstall dependencies
+cd backend
+pip install -r requirements.txt
+```
+
+#### 3. "Port already in use" Error
+
+**Problem:** Port 5000 or 3000 is already occupied.
+
+**Solution:**
+```bash
+# Find and kill the process (Linux/Mac)
+lsof -ti:5000 | xargs kill -9  # Backend
+lsof -ti:3000 | xargs kill -9  # Frontend
+
+# On Windows, use Task Manager or:
+netstat -ano | findstr :5000
+taskkill /PID <PID> /F
+```
+
+Or change the ports:
+- **Backend:** Edit `backend/api/app.py`, change `port=5000` to another port
+- **Frontend:** Create `.env.local` and add `PORT=3001`
+
+#### 4. CORS Errors
+
+**Problem:** Cross-Origin Resource Sharing errors in browser console.
+
+**Solution:** Ensure both servers are running:
+- Backend: `http://localhost:5000`
+- Frontend: `http://localhost:3000`
+
+The Flask app has CORS enabled via `flask-cors`.
+
+#### 5. Import Errors with NumPy/SciPy
+
+**Problem:** Errors related to NumPy or SciPy installation on Apple Silicon or Windows.
+
+**Solution:**
+```bash
+# For Apple Silicon (M1/M2)
+pip install --upgrade pip
+pip install numpy scipy --no-cache-dir
+
+# For Windows
+pip install --upgrade pip setuptools wheel
+pip install numpy scipy
+```
+
+#### 6. Frontend Build Errors
+
+**Problem:** TypeScript or build errors in Next.js.
+
+**Solution:**
+```bash
+# Clear Next.js cache
+rm -rf .next
+npm run dev
+```
+
+#### 7. Flask App Not Starting
+
+**Problem:** Flask server won't start or crashes immediately.
+
+**Solution:**
+```bash
+# Verify Python version
+python3 --version  # Should be 3.8+
+
+# Test imports manually
+cd backend/api
+python3 -c "from app import app; print('Flask app loaded successfully')"
+```
+
+### Still Having Issues?
+
+1. Check both terminal windows for error messages
+2. Verify all prerequisites are installed:
+   ```bash
+   python3 --version
+   node --version
+   npm --version
+   ```
+3. Review the [QUICKSTART.md](QUICKSTART.md) guide
+4. Open an issue on [GitHub](https://github.com/blarencecoey/OptiPrice/issues)
+
 ## Development
 
 ### Running Tests
@@ -241,14 +456,34 @@ npm test
 
 **Backend:**
 ```bash
+# Install production WSGI server
+pip install gunicorn
+
+# Run with gunicorn
 cd backend/api
-gunicorn app:app
+gunicorn -w 4 -b 0.0.0.0:5000 app:app
 ```
 
 **Frontend:**
 ```bash
+# Build optimized production bundle
 npm run build
+
+# Start production server
 npm start
+```
+
+### Environment Variables
+
+Create a `.env.local` file in the project root for frontend configuration:
+```bash
+NEXT_PUBLIC_API_URL=http://localhost:5000
+```
+
+For backend, create `backend/.env`:
+```bash
+FLASK_ENV=development
+FLASK_DEBUG=1
 ```
 
 ## Contributing

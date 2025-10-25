@@ -1,52 +1,71 @@
-# Quick Start Guide
+# OptiPrice - Quick Start Guide
 
-## Installation (5 minutes)
+Get up and running with OptiPrice in **5 minutes**!
 
-### Step 1: Backend Setup
+## Prerequisites
+
+Ensure you have:
+- Python 3.8+ installed
+- Node.js 18.0+ installed
+- Git installed
+
+## Installation
+
+### Step 1: Clone & Navigate
 
 ```bash
-# Navigate to project
-cd "Options Pricing Project"
+git clone https://github.com/blarencecoey/OptiPrice.git
+cd OptiPrice
+```
 
-# Create and activate virtual environment
+### Step 2: Backend Setup (2 minutes)
+
+```bash
+# Create virtual environment
 python3 -m venv venv
 
-# Windows
+# Activate virtual environment
+# On Windows:
 venv\Scripts\activate
-
-# Linux/Mac
+# On Linux/Mac:
 source venv/bin/activate
 
 # Install dependencies
-cd backend
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
-### Step 2: Frontend Setup
+### Step 3: Frontend Setup (2 minutes)
+
+Open a **new terminal** window:
 
 ```bash
-# In a new terminal, navigate to project
-cd "Options Pricing Project"
-
-# Install dependencies
+cd OptiPrice
 npm install
 ```
 
 ## Running the Application
 
-### Terminal 1 - Backend
+### Terminal 1 - Backend Server
+
 ```bash
-cd "Options Pricing Project/backend/api"
+# Activate venv (if not already activated)
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Navigate and start
+cd backend/api
 python3 app.py
 ```
-Backend will run on: http://localhost:5000
 
-### Terminal 2 - Frontend
+✅ Backend running at: **http://localhost:5000**
+
+### Terminal 2 - Frontend Server
+
 ```bash
-cd "Options Pricing Project"
+# From project root
 npm run dev
 ```
-Frontend will run on: http://localhost:3000
+
+✅ Frontend running at: **http://localhost:3000**
 
 ## First Steps
 

@@ -1,39 +1,16 @@
-# Starting the Application
+# OptiPrice - Startup Guide
 
-## ✅ Backend is Already Running!
+This guide helps you start OptiPrice after initial installation.
 
-The Python Flask backend is running at: **http://localhost:5000**
+## Quick Start Commands
 
-The API health check passed! ✓
-
----
-
-## 🚀 Next Step: Start the Frontend
-
-Open a **NEW terminal window** and run:
+### Terminal 1: Backend Server
 
 ```bash
-cd "Options Pricing Project"
-npm run dev
-```
-
-Then open your browser to: **http://localhost:3000**
-
----
-
-## 📋 Full Instructions
-
-### Every Time You Want to Start the Application:
-
-#### **Terminal 1: Backend Server**
-
-```bash
-# Navigate to project
-cd "Options Pricing Project"
+cd OptiPrice
 
 # Activate virtual environment
 source venv/bin/activate       # Linux/Mac
-# OR
 venv\Scripts\activate          # Windows
 
 # Start backend
@@ -41,35 +18,35 @@ cd backend/api
 python3 app.py
 ```
 
-You should see:
+**Expected output:**
 ```
  * Running on http://127.0.0.1:5000
+ * Running on http://0.0.0.0:5000
 ```
 
-#### **Terminal 2: Frontend Server**
+### Terminal 2: Frontend Server
 
 ```bash
-# Navigate to project
-cd "Options Pricing Project"
+cd OptiPrice
 
 # Start frontend
 npm run dev
 ```
 
-You should see:
+**Expected output:**
 ```
-ready - started server on 0.0.0.0:3000
+▲ Next.js 14.0.0
+- Local:        http://localhost:3000
+- ready started server on 0.0.0.0:3000
 ```
 
----
+## Access the Application
 
-## 🌐 Access the Application
+Open your browser and navigate to:
 
-Once both servers are running:
+**http://localhost:3000**
 
-1. Open your browser
-2. Navigate to: **http://localhost:3000**
-3. You'll see the Options Pricing Calculator!
+You should see the OptiPrice dashboard!
 
 ---
 
